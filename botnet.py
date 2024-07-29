@@ -2,4 +2,9 @@ import json
 import requests
 from API import *
 
-print(json.dumps(GetStatus(), indent=4))
+f = open('config.json')
+data = json.load(f)
+
+token = GenerateToken(data["username"], data["password"])
+
+print(token)
