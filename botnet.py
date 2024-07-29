@@ -1,10 +1,6 @@
-import json
-import requests
-from API import *
 
-f = open('config.json')
-data = json.load(f)
+from client import Client
 
-token = GenerateToken(data["username"], data["password"])
+client = Client("config.json")
 
-print(token)
+print(client.token)

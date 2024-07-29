@@ -12,17 +12,21 @@ def GetRequest ( url, headers ) :
 def PostRequest ( url, headers ) :
     response = requests.post(
         url=url,
-        headers=headers
+        headers={
+            "Accept": "application/json",
+            "Content-Type": "application/json",
+        }|headers
     )
     return response.json()
 
 def GetStatus ( ) :
     return GetRequest(f"{API_ROOT}/")
 
+def GetAllCharacters ( ) :
+    return GetRequest(f"{API_ROOT}/characters/")
+
 def GenerateToken ( username, password ) :
     auth = base64.b64encode(f"{username}:{password}".encode()).decode()
     return PostRequest(f"{API_ROOT}/token/", {
-        "Accept": "application/json",
-        "Authorization": f"Basic {auth}",
-        "Content-Type": "application/json"
+        "Authorization": f"Basic {auth}"
     })["token"]
