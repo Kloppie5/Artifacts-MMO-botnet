@@ -5,9 +5,7 @@ AUTH = "";
 function GetStatus(){
     $.ajax({
         type: "GET",
-        url: `${API_ROOT}/`, function(data) {
-            console.log(data)
-        },
+        url: `${API_ROOT}/`,
         success: function (dt, status, request) {
             console.log(dt);
             console.log(status);
@@ -41,7 +39,19 @@ function GetStatus(){
 // def CreateCharacter ( ) :
 // def GetAllCharacters ( ) :
 // def GetCharacter ( ) :
-// def GetAllMaps ( ) :
+function GetAllMaps(page, size, callback){
+    $.ajax({
+        type: "GET",
+        url: `${API_ROOT}/maps`,
+        data: {
+            page: page,
+            size: size
+        },
+        success: function (dt, status, request) {
+            callback(dt.data);
+        }
+    });
+}
 // def GetMap ( ) :
 // def GetAllItems ( ) :
 // def GetItem ( ) :
@@ -73,37 +83,6 @@ function GenerateToken(username, password){
 }
 
 /*
-def GetRequest ( url, headers={}, auth="" ) :
-    response = requests.get(
-        url=url,
-        headers={
-            "Accept": "application/json",
-            "Authorization": auth,
-            "Content-Type": "application/json",
-        }|headers
-    )
-    response = response.json()
-    with open('debug/last_get_response.json', 'w') as f:
-        json.dump(response, f, indent=4)
-    return response
-def PostRequest ( url, headers={}, data={}, auth="" ) :
-    print(f"> POST {url}, {data}")
-    response = requests.post(
-        url=url,
-        headers={
-            "Accept": "application/json",
-            "Authorization": auth,
-            "Content-Type": "application/json",
-        }|headers,
-        json=data
-    )
-    response = response.json()
-    with open('debug/last_post_response.json', 'w') as f:
-        json.dump(response, f, indent=4)
-    return response
-
-
-
 def ActionMove ( auth, name, x, y ) :
     return PostRequest(
         f"{API_ROOT}/my/{name}/action/move", 
