@@ -18,6 +18,7 @@ def GetRequest ( url, headers={}, auth="" ) :
         json.dump(response, f, indent=4)
     return response
 def PostRequest ( url, headers={}, data={}, auth="" ) :
+    print(f"> POST {url}, {data}")
     response = requests.post(
         url=url,
         headers={
@@ -25,7 +26,7 @@ def PostRequest ( url, headers={}, data={}, auth="" ) :
             "Authorization": auth,
             "Content-Type": "application/json",
         }|headers,
-        data=data
+        json=data
     )
     response = response.json()
     with open('debug/last_post_response.json', 'w') as f:
@@ -131,8 +132,8 @@ def GetResources ( ) :
 def GetAllEvents ( ) :
     raise NotImplementedError()
 
-def GetAllGeItems ( ) :
-    raise NotImplementedError()
+def GetAllGeItems ( page, size ) :
+    return GetRequest(f"{API_ROOT}/ge/?page={page}&size={size}")["data"]
 def GetGeItem ( ) :
     raise NotImplementedError()
 
