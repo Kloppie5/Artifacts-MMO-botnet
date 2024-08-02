@@ -1,265 +1,45 @@
 
+#fullwrapper {
+    height: 650px;
+    width: 1300px
+}
+#header {
+    height: 50px;
+}
 #map-main {
-    position: relative;
-    width: 680px;
-    height: 720px;
+    float: left;
+    width: 600px;
+    height: 600px;
     outline: 2px solid black;
 }
 
-.map-tile {
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    outline: 1px solid black;
+div {
+    outline: 1px dashed red;
 }
 
+.schedule {
+    float: left;
+    width: 100px;
+    height: 600px;
+}
+#schedule-1 {
+    background-color: #9999FF;
+}
+#schedule-2 {
+    background-color: #99FF99;
+}
+#schedule-3 {
+    background-color: #FF9999;
+}
+#schedule-4 {
+    background-color: #99FFFF;
+}
+#schedule-5 {
+    background-color: #FFFF99;
+}
 
-
-
-.image-forest_1 {
-    background-size: contain;
-    background-image: url("./images/forest_1.png");
-}.image-forest_2 {
-    background-size: contain;
-    background-image: url("./images/forest_2.png");
-}
-.image-forest_3 {
-    background-size: contain;
-    background-image: url("./images/forest_3.png");
-}
-.image-forest_4 {
-    background-size: contain;
-    background-image: url("./images/forest_4.png");
-}
-.image-forest_ashtree1 {
-    background-size: contain;
-    background-image: url("./images/forest_ashtree1.png");
-}
-.image-forest_ashtree2 {
-    background-size: contain;
-    background-image: url("./images/forest_ashtree2.png");
-}
-.image-forest_bank1 {
-    background-size: contain;
-    background-image: url("./images/forest_bank1.png");
-}
-.image-forest_birchtree1 {
-    background-size: contain;
-    background-image: url("./images/forest_birchtree1.png");
-}
-.image-forest_birchtree2 {
-    background-size: contain;
-    background-image: url("./images/forest_birchtree2.png");
-}
-.image-forest_blueslime1 {
-    background-size: contain;
-    background-image: url("./images/forest_blueslime1.png");
-}
-.image-forest_blueslime2 {
-    background-size: contain;
-    background-image: url("./images/forest_blueslime2.png");
-}
-.image-forest_chicken1 {
-    background-size: contain;
-    background-image: url("./images/forest_chicken1.png");
-}
-.image-forest_coal1 {
-    background-size: contain;
-    background-image: url("./images/forest_coal1.png");
-}
-.image-forest_copperore1 {
-    background-size: contain;
-    background-image: url("./images/forest_copperore1.png");
-}
-.image-forest_cow1 {
-    background-size: contain;
-    background-image: url("./images/forest_cow1.png");
-}
-.image-forest_cs1 {
-    background-size: contain;
-    background-image: url("./images/forest_cs1.png");
-}
-.image-forest_flyingserpent1 {
-    background-size: contain;
-    background-image: url("./images/forest_flyingserpent1.png");
-}
-.image-forest_flyingserpent2 {
-    background-size: contain;
-    background-image: url("./images/forest_flyingserpent2.png");
-}
-.image-forest_gcstation1 {
-    background-size: contain;
-    background-image: url("./images/forest_gcstation1.png");
-}
-.image-forest_goldore1 {
-    background-size: contain;
-    background-image: url("./images/forest_goldore1.png");
-}
-.image-forest_grand_exchange1 {
-    background-size: contain;
-    background-image: url("./images/forest_grand_exchange1.png");
-}
-.image-forest_greenslime2 {
-    background-size: contain;
-    background-image: url("./images/forest_greenslime2.png");
-}
-.image-forest_ironore1 {
-    background-size: contain;
-    background-image: url("./images/forest_ironore1.png");
-}
-.image-forest_jewelrycrafting1 {
-    background-size: contain;
-    background-image: url("./images/forest_jewelrycrafting1.png");
-}
-.image-forest_lake1 {
-    background-size: contain;
-    background-image: url("./images/forest_lake1.png");
-}
-.image-forest_lake2 {
-    background-size: contain;
-    background-image: url("./images/forest_lake2.png");
-}
-.image-forest_lake3 {
-    background-size: contain;
-    background-image: url("./images/forest_lake3.png");
-}
-.image-forest_lake4 {
-    background-size: contain;
-    background-image: url("./images/forest_lake4.png");
-}
-.image-forest_miningstation1 {
-    background-size: contain;
-    background-image: url("./images/forest_miningstation1.png");
-}
-.image-forest_mushmush1 {
-    background-size: contain;
-    background-image: url("./images/forest_mushmush1.png");
-}
-.image-forest_mushmush2 {
-    background-size: contain;
-    background-image: url("./images/forest_mushmush2.png");
-}
-.image-forest_ogre1 {
-    background-size: contain;
-    background-image: url("./images/forest_ogre1.png");
-}
-.image-forest_ogre2 {
-    background-size: contain;
-    background-image: url("./images/forest_ogre2.png");
-}
-.image-forest_owlbear1 {
-    background-size: contain;
-    background-image: url("./images/forest_owlbear1.png");
-}
-.image-forest_owlbear2 {
-    background-size: contain;
-    background-image: url("./images/forest_owlbear2.png");
-}
-.image-forest_pig1 {
-    background-size: contain;
-    background-image: url("./images/forest_pig1.png");
-}
-.image-forest_redslime1 {
-    background-size: contain;
-    background-image: url("./images/forest_redslime1.png");
-}
-.image-forest_redslime2 {
-    background-size: contain;
-    background-image: url("./images/forest_redslime2.png");
-}
-.image-forest_skeleton1 {
-    background-size: contain;
-    background-image: url("./images/forest_skeleton1.png");
-}
-.image-forest_skeleton2 {
-    background-size: contain;
-    background-image: url("./images/forest_skeleton2.png");
-}
-.image-forest_skeleton3 {
-    background-size: contain;
-    background-image: url("./images/forest_skeleton3.png");
-}
-.image-forest_skeleton4 {
-    background-size: contain;
-    background-image: url("./images/forest_skeleton4.png");
-}
-.image-forest_skeleton5 {
-    background-size: contain;
-    background-image: url("./images/forest_skeleton5.png");
-}
-.image-forest_skeleton6 {
-    background-size: contain;
-    background-image: url("./images/forest_skeleton6.png");
-}
-.image-forest_skeleton7 {
-    background-size: contain;
-    background-image: url("./images/forest_skeleton7.png");
-}
-.image-forest_skeleton8 {
-    background-size: contain;
-    background-image: url("./images/forest_skeleton8.png");
-}
-.image-forest_skeleton9 {
-    background-size: contain;
-    background-image: url("./images/forest_skeleton9.png");
-}
-.image-forest_spucetree1 {
-    background-size: contain;
-    background-image: url("./images/forest_spucetree1.png");
-}
-.image-forest_spucetree2 {
-    background-size: contain;
-    background-image: url("./images/forest_spucetree2.png");
-}
-.image-forest_village1 {
-    background-size: contain;
-    background-image: url("./images/forest_village1.png");
-}
-.image-forest_village2 {
-    background-size: contain;
-    background-image: url("./images/forest_village2.png");
-}
-.image-forest_village3 {
-    background-size: contain;
-    background-image: url("./images/forest_village3.png");
-}
-.image-forest_village4 {
-    background-size: contain;
-    background-image: url("./images/forest_village4.png");
-}
-.image-forest_village5 {
-    background-size: contain;
-    background-image: url("./images/forest_village5.png");
-}
-.image-forest_village6 {
-    background-size: contain;
-    background-image: url("./images/forest_village6.png");
-}
-.image-forest_wcstation1 {
-    background-size: contain;
-    background-image: url("./images/forest_wcstation1.png");
-}
-.image-forest_wolf1 {
-    background-size: contain;
-    background-image: url("./images/forest_wolf1.png");
-}
-.image-forest_wolf2 {
-    background-size: contain;
-    background-image: url("./images/forest_wolf2.png");
-}
-.image-forest_woodcuttingstation1 {
-    background-size: contain;
-    background-image: url("./images/forest_woodcuttingstation1.png");
-}
-.image-forest_yellowslime1 {
-    background-size: contain;
-    background-image: url("./images/forest_yellowslime1.png");
-}
-.image-forest_yellowslime2 {
-    background-size: contain;
-    background-image: url("./images/forest_yellowslime2.png");
-}
-.image-spawn {
-    background-size: contain;
-    background-image: url("./images/spawn.png");
+#actions {
+    float: left;
+    width: 200px;
+    height: 600px;
 }

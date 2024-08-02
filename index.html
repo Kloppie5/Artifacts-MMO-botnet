@@ -37,22 +37,55 @@
         </script>
     </head>
     <body>
-        <h1>Hello again!</h1>
-        <div id="login">
-            <input id="txtUsername" type="text" placeholder="Username"/>
-            <input id="txtPassword" type="text" placeholder="Password"/>
-            <input id="btnLogin" type="submit" value="Login"/>
-        </div>
-        <input id="btnFetchMap" type="submit" value="Fetch map"/>
-        <div id="map-main">
+        <div id="fullwrapper">
+            <div id="header">
+                <div id="login">
+                    <input id="txtUsername" type="text" placeholder="Username"/>
+                    <input id="txtPassword" type="text" placeholder="Password"/>
+                    <input id="btnLogin" type="submit" value="Login"/>
+                </div>
+                <input id="btnFetchMap" type="submit" value="Fetch map"/>
+            </div>
+            <div id="main">
+                <div id="map">
+                    <canvas id="map-main" width="3808" height="4704"></canvas>
+                </div>
+                <div id="scheduler">
+                    <div class="schedule" id="schedule-1">
+                        <div class="scheduled-action action-move active-action">
+                            <span class="count">1</span>
+                            <span class="action-description">Move (1,6)</span>
+                        </div>
+                        <div class="scheduled-action action-gather">
+                            <span class="count">90</span>
+                            <span class="action-description">Gather</span>
+                        </div>
+                        <div class="scheduled-action action-move">
+                            <span class="count">1</span>
+                            <span class="action-description">Move (4,1)</span>
+                        </div>
+                        <div class="scheduled-action action-deposit-bank">
+                            <span class="count">1</span>
+                            <span class="action-description">Deposit bank</span>
+                        </div>
+                    </div>
+                    <div class="schedule" id="schedule-2">
 
+                    </div>
+                    <div class="schedule" id="schedule-3">
+
+                    </div>
+                    <div class="schedule" id="schedule-4">
+
+                    </div>
+                    <div class="schedule" id="schedule-5">
+
+                    </div>
+                    <div id="actions">
+                        <div class="action" id="action-move">Move to</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </body>
 </html>
-<!--
-https://api.artifactsmmo.com/images/characters/men3.png
-https://api.artifactsmmo.com/images/characters/women3.png
-https://api.artifactsmmo.com/images/characters/women2.png
-https://api.artifactsmmo.com/images/characters/women1.png
-https://api.artifactsmmo.com/images/characters/men1.png
--->
