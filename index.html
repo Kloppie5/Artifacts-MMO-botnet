@@ -1,20 +1,43 @@
 <html>
     <head>
         <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+        <script src="./artifacts-api.js"></script>
         <script>
             $(document).ready(function() {
-                $("#btnFetchMap").click(function(){
-                    var username = $("#txtUsername").val();
-                    var password = $("#txtPassword").val();
-                    alert(`Username ${username}, password ${password}`);
-                });
+                $("#btnLogin").click(Login);
+                $("#btnFetchMap").click(FetchMap)
+
+                LoginByCookie(document.cookie);
             });
+        </script>
+        <script>
+            function LoginByCookie(cookie){
+                if (cookie == "")
+                    return;
+                AUTH = cookie;
+                $("#login").hide();
+            }
+            function Login(){
+                var username = $("#txtUsername").val();
+                var password = $("#txtPassword").val();
+                GenerateToken(username, password);
+                if (AUTH == "")
+                    return;
+                document.cookie = AUTH;
+                $("#login").hide();
+            }
+            function FetchMap(){
+                console.log(AUTH);
+            }
         </script>
     </head>
     <body>
         <h1>Hello again!</h1>
-        <input id="txtUsername" type="text" placeholder="Username"/>
-        <input id="txtPassword" type="text" placeholder="Password"/>
+        <div id="login">
+            <input id="txtUsername" type="text" placeholder="Username"/>
+            <input id="txtPassword" type="text" placeholder="Password"/>
+            <input id="btnLogin" type="submit" value="Login"\>
+        </div>
         <input id="btnFetchMap" type="submit" value="Fetch map"/>
         <div id="map-main">
 
