@@ -7,7 +7,8 @@
         <script>
             $(document).ready(function() {
                 $("#btnLogin").click(Login);
-                $("#btnFetchMap").click(FetchMap)
+                $("#btnFetchMap").click(FetchMap);
+                $("#btnDrawSchedules").click(DrawSchedules);
 
                 LoginByCookie(document.cookie);
             });
@@ -34,6 +35,39 @@
                 GetAllMaps(3, 100, MapAddList);
                 GetAllMaps(4, 100, MapAddList);
             }
+            function DrawSchedules(){
+                DrawLine(1,6,4,1, 0, -100, '#9999FF');
+                DrawLine(1,6,4,1, 95, -31, '#99FF99');
+                DrawLine(1,6,4,1, -95, -31, '#FF9999');
+                DrawLine(1,6,4,1, 59, 81, '#99FFFF');
+                DrawLine(1,6,4,1, -59, 81, '#FFFF99');
+            }
+            function DrawLine(fromx, fromy, tox, toy, offx, offy, color){
+                ctx = $("#map-main")[0].getContext("2d");
+
+                fromx = (fromx+5)*224+112 + offx
+                fromy = (fromy+5)*224+112 + offy
+
+                tox = (tox+5)*224+112 + offx
+                toy = (toy+5)*224+112 + offy
+
+                ctx.beginPath();
+                ctx.arc(fromx, fromy, 20, 0, 2 * Math.PI, false);
+                ctx.fillStyle = color;
+                ctx.fill();
+
+                ctx.beginPath();
+                ctx.moveTo(fromx, fromy);
+                ctx.lineWidth = 10;
+                ctx.strokeStyle = color;
+                ctx.lineTo(tox, toy);
+                ctx.stroke();
+
+                ctx.beginPath();
+                ctx.arc(tox, toy, 20, 0, 2 * Math.PI, false);
+                ctx.fillStyle = color;
+                ctx.fill();
+            }
         </script>
     </head>
     <body>
@@ -45,44 +79,107 @@
                     <input id="btnLogin" type="submit" value="Login"/>
                 </div>
                 <input id="btnFetchMap" type="submit" value="Fetch map"/>
+                <input id="btnDrawSchedules" type="submit" value="Draw schedules"/>
             </div>
             <div id="main">
                 <div id="map">
-                    <canvas id="map-main" width="3808" height="4704"></canvas>
+                    <canvas id="map-main" width="4800" height="4800"></canvas>
                 </div>
                 <div id="scheduler">
                     <div class="schedule" id="schedule-1">
                         <div class="scheduled-action action-move active-action">
-                            <span class="count">1</span>
+                            <span class="count"></span>
                             <span class="action-description">Move (1,6)</span>
                         </div>
                         <div class="scheduled-action action-gather">
-                            <span class="count">90</span>
+                            <span class="count">90x</span>
                             <span class="action-description">Gather</span>
                         </div>
                         <div class="scheduled-action action-move">
-                            <span class="count">1</span>
+                            <span class="count"></span>
                             <span class="action-description">Move (4,1)</span>
                         </div>
                         <div class="scheduled-action action-deposit-bank">
-                            <span class="count">1</span>
+                            <span class="count"></span>
                             <span class="action-description">Deposit bank</span>
                         </div>
                     </div>
                     <div class="schedule" id="schedule-2">
-
+                        <div class="scheduled-action action-move active-action">
+                            <span class="count"></span>
+                            <span class="action-description">Move (1,6)</span>
+                        </div>
+                        <div class="scheduled-action action-gather">
+                            <span class="count">90x</span>
+                            <span class="action-description">Gather</span>
+                        </div>
+                        <div class="scheduled-action action-move">
+                            <span class="count"></span>
+                            <span class="action-description">Move (4,1)</span>
+                        </div>
+                        <div class="scheduled-action action-deposit-bank">
+                            <span class="count"></span>
+                            <span class="action-description">Deposit bank</span>
+                        </div>
                     </div>
                     <div class="schedule" id="schedule-3">
-
+                        <div class="scheduled-action action-move active-action">
+                            <span class="count"></span>
+                            <span class="action-description">Move (1,6)</span>
+                        </div>
+                        <div class="scheduled-action action-gather">
+                            <span class="count">90x</span>
+                            <span class="action-description">Gather</span>
+                        </div>
+                        <div class="scheduled-action action-move">
+                            <span class="count"></span>
+                            <span class="action-description">Move (4,1)</span>
+                        </div>
+                        <div class="scheduled-action action-deposit-bank">
+                            <span class="count"></span>
+                            <span class="action-description">Deposit bank</span>
+                        </div>
                     </div>
                     <div class="schedule" id="schedule-4">
-
+                        <div class="scheduled-action action-move active-action">
+                            <span class="count"></span>
+                            <span class="action-description">Move (1,6)</span>
+                        </div>
+                        <div class="scheduled-action action-gather">
+                            <span class="count">90x</span>
+                            <span class="action-description">Gather</span>
+                        </div>
+                        <div class="scheduled-action action-move">
+                            <span class="count"></span>
+                            <span class="action-description">Move (4,1)</span>
+                        </div>
+                        <div class="scheduled-action action-deposit-bank">
+                            <span class="count"></span>
+                            <span class="action-description">Deposit bank</span>
+                        </div>
                     </div>
                     <div class="schedule" id="schedule-5">
-
+                        <div class="scheduled-action action-move active-action">
+                            <span class="count"></span>
+                            <span class="action-description">Move (1,6)</span>
+                        </div>
+                        <div class="scheduled-action action-gather">
+                            <span class="count">90x</span>
+                            <span class="action-description">Gather</span>
+                        </div>
+                        <div class="scheduled-action action-move">
+                            <span class="count"></span>
+                            <span class="action-description">Move (4,1)</span>
+                        </div>
+                        <div class="scheduled-action action-deposit-bank">
+                            <span class="count"></span>
+                            <span class="action-description">Deposit bank</span>
+                        </div>
                     </div>
                     <div id="actions">
                         <div class="action" id="action-move">Move to</div>
+                        <div class="action" id="action-gathering">Gather</div>
+                        <div class="action" id="action-deposit-bank">Deposit bank</div>
                     </div>
                 </div>
             </div>

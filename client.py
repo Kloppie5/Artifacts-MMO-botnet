@@ -6,20 +6,19 @@ from API import *
 
 def main () :
     print(f"Client v2408011845")
-    client = Client("config.json")
+    client = Client()
+    i = 0
+    client.Move(1, 6, 30)
+    while True :
+        i += 1
+        print(f"Step {i}")
+        client.Gather()
 
-    # i = 0
-# client.Move(1, 6, 30)
-# while True :
-#     i += 1
-#     print(f"Step {i}")
-#     client.Gather()
-
-#     if i % 90 == 1 :
-#         client.Move(4, 1, 35)
-#         client.UpdateCharacters()
-#         client.DumpInventoryToBank()
-#         client.Move(1, 6, 30)
+        if i % 90 == 1 :
+            client.Move(4, 1, 35)
+            client.UpdateCharacters()
+            client.DumpInventoryToBank()
+            client.Move(1, 6, 30)
 
 # mining
 # 2,0 copper (1)
@@ -82,11 +81,8 @@ def main () :
 
 class Client :
 
-    def __init__ ( self, configfile ) :
+    def __init__ ( self ) :
         self.configfile = configfile
-        with open(configfile) as f :
-            data = json.load(f)
-        self.token = GenerateToken(data["username"], data["password"])
         self.auth = f"Bearer {self.token}"
         self.UpdateCharacters()
     
